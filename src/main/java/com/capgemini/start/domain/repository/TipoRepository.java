@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.capgemini.start.domain.entity.Tipo;
 
-@Repository
+//@Repository
 public interface TipoRepository extends JpaRepository<Tipo, Long>{
 	
 	boolean existsByDescricaoIgnoreCase(String descricao);

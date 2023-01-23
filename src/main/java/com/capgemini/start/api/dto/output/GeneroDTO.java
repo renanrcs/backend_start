@@ -10,7 +10,7 @@ public class GeneroDTO {
 	
 	private Integer id;
 	private String descricao;
-	private LocalDateTime dataCriacao;
+	private LocalDateTime dataInclusao;
 	private LocalDateTime dataAlteracao;
 
 }

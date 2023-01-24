@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
+import com.capgemini.start.api.dto.input.GeneroInputDTO;
 import com.capgemini.start.api.dto.output.GeneroDTO;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -26,7 +27,7 @@ public interface GeneroResource {
 	
 	@Operation(summary = "Insere um genero")
 	@PostMapping()
-	ResponseEntity<GeneroDTO> insert(@RequestBody @Valid GeneroDTO genero);
+	ResponseEntity<GeneroDTO> insert(@RequestBody @Valid GeneroInputDTO genero);
 	
 	@Operation(summary = "Lista todos os generos")
 	@GetMapping()

@@ -26,7 +26,6 @@ public class GeneroService extends AbstractService<Genero, Integer> {
 	
 	@Override
 	public Genero findById(Integer id) {
-//		METHOD orElseThrow throw a Exception case don't find value
 		return generoRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
 	}
 	
@@ -34,17 +33,14 @@ public class GeneroService extends AbstractService<Genero, Integer> {
 	public Genero insert(Genero genero) {
 //		defensive programming
 		if(this.generoRepository.existsByDescricaoIgnoreCase(genero.getDescricao())) {
-//			does this exception exits the method?
 			throw new ObjectAlreadyExistsException("\"Já existe um genero com esta descrição.\"");
 		}
 		genero.setDataInclusao(new Date());
-		System.out.println(new Date()); //format date?
 		return this.generoRepository.save(genero);
 	}
 	
 	@Override
 	public Genero update(Genero genero) {
-//		if Id doesn't exist?
 		if(this.generoRepository.existsByIdNotAndDescricaoIgnoreCase(genero.getId(), genero.getDescricao())) {
 			throw new ObjectAlreadyExistsException("Já existe outro genero com esta descrição.");
 		}

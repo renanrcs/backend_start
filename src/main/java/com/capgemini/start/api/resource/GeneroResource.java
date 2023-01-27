@@ -35,7 +35,7 @@ public interface GeneroResource {
 	
 	@Operation(summary = "Atualiza um genero")
 	@PutMapping(value = "/{id}")
-	ResponseEntity<GeneroDTO> update(@PathVariable Integer id, @RequestBody @Valid GeneroDTO genero);
+	ResponseEntity<GeneroDTO> update(@PathVariable Integer id, @RequestBody @Valid GeneroInputDTO genero);
 	
 	@Operation(summary = "Exclui um genero pelo id")
 	@DeleteMapping(value = "/{id}")

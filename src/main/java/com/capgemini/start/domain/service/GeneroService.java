@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class GeneroService extends AbstractService<Genero, Integer> {
 	
-	private final GeneroRepository generoRepository; //Why final?
+	private final GeneroRepository generoRepository;
 
 	@Override
 	protected JpaRepository<Genero, Integer> getRepository() {
@@ -48,10 +48,10 @@ public class GeneroService extends AbstractService<Genero, Integer> {
 		return generoRepository.save(genero);
 	}
 	
-	@Override
-	public void delete(Integer id) {
-		generoRepository.deleteById(id);
-	}
+//	@Override
+//	public void delete(Integer id) {
+//		generoRepository.deleteById(id);
+//	}
 	
 	@Override
 	public List<Genero> findAll() {

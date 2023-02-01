@@ -35,7 +35,7 @@ public class GeneroResourceImpl implements GeneroResource {
 	private GeneroMapper mapper;
 	
 	@Override
-	public ResponseEntity<GeneroDTO> findById(Integer id) {
+	public ResponseEntity<GeneroDTO> findById(Long id) {
 		Genero genero = this.generoService.findById(id);
 		GeneroDTO dto = mapper.toDTO(genero);
 		return ResponseEntity.ok(dto);
@@ -68,7 +68,7 @@ public class GeneroResourceImpl implements GeneroResource {
 	}
 
 	@Override
-	public ResponseEntity<GeneroDTO> update(Integer id, @Valid GeneroInputDTO genero) {
+	public ResponseEntity<GeneroDTO> update(Long id, @Valid GeneroInputDTO genero) {
 		Genero toUpdate = this.generoService.findById(id);
 		toUpdate.setDescricao(genero.getDescricao());
 		
@@ -78,7 +78,7 @@ public class GeneroResourceImpl implements GeneroResource {
 	}
 
 	@Override
-	public ResponseEntity<Void> delete(Integer id) {
+	public ResponseEntity<Void> delete(Long id) {
 		this.generoService.delete(id);
 		return ResponseEntity.ok().build();
 	}

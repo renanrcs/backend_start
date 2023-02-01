@@ -15,17 +15,17 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor //build constructor with arguments
 @Service
-public class GeneroService extends AbstractService<Genero, Integer> {
+public class GeneroService extends AbstractService<Genero, Long> {
 	
 	private final GeneroRepository generoRepository;
 
 	@Override
-	protected JpaRepository<Genero, Integer> getRepository() {
+	protected JpaRepository<Genero, Long> getRepository() {
 		return this.generoRepository;
 	}
 	
 	@Override
-	public Genero findById(Integer id) {
+	public Genero findById(Long id) {
 		return generoRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
 	}
 	

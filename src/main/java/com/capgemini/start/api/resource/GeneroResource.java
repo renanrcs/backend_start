@@ -23,7 +23,7 @@ public interface GeneroResource {
 	
 	@Operation(summary = "Consultar un genero por id")
 	@GetMapping(value = "/{id}")
-	ResponseEntity<GeneroDTO> findById(@PathVariable Integer id);
+	ResponseEntity<GeneroDTO> findById(@PathVariable Long id);
 	
 	@Operation(summary = "Insere um genero")
 	@PostMapping()
@@ -35,11 +35,11 @@ public interface GeneroResource {
 	
 	@Operation(summary = "Atualiza um genero")
 	@PutMapping(value = "/{id}")
-	ResponseEntity<GeneroDTO> update(@PathVariable Integer id, @RequestBody @Valid GeneroInputDTO genero);
+	ResponseEntity<GeneroDTO> update(@PathVariable Long id, @RequestBody @Valid GeneroInputDTO genero);
 	
 	@Operation(summary = "Exclui um genero pelo id")
 	@DeleteMapping(value = "/{id}")
-	ResponseEntity<Void> delete(@PathVariable Integer id);
+	ResponseEntity<Void> delete(@PathVariable Long id);
 	
 }
 
